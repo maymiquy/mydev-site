@@ -32,7 +32,7 @@ export default function Home({ searchParams: { customUsername } }) {
    </nav>
    <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-   <div className="max-h-fit z-10 hover:scale-110 animate-title duration-1000 overflow-hidden flex flex-row justify-center">
+   <div className="max-h-fit z-10 hover:scale-150 md:hover:scale-110 animate-title duration-1000 md:overflow-hidden flex flex-row justify-center">
     <h1 className="md:flex items-center hidden bg-gradient-to-r from-zinc-400 to-zinc-100 hover:from-blue-700 hover:to-purple-700 text-transparent bg-clip-text cursor-default text-edge-outline font-display text-7xl md:text-9xl whitespace-nowrap">
      {username}
     </h1>
@@ -41,10 +41,10 @@ export default function Home({ searchParams: { customUsername } }) {
 
    <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
    <div className="my-16 text-center px-6 md:px-0 animate-fade-in">
-    <h2 className="text-lg text-zinc-300">
+    <h1 className="text-sm sm:text-lg text-zinc-300 tracking-tight">
      <UserText promise={promise} />
      <RecentActivity username={username} />
-    </h2>
+    </h1>
    </div>
   </main>
  );
@@ -54,7 +54,7 @@ const UserIcon = async ({ promise }) => {
  await new Promise((resolve) => setTimeout(resolve, 3000));
  const user = await promise;
 
- return <Image alt="👨‍💻" width={150} height={150} src={user.avatar_url || data.avatarUrl} className="rounded-full mb-8" />;
+ return <Image alt="image" width={150} height={150} src={user.avatar_url || data.avatarUrl} className="rounded-full w-72 h-72 md:w-40 md:h-40 mb-4 md:mb-12" />;
 };
 
 const UserText = async ({ promise }) => {

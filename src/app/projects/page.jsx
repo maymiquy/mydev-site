@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "../../components/ui/card";
-import { Article } from "./article";
+import { Article } from "../../components/article";
 import chunk from "lodash/chunk";
 import data from "../../lib/data.json";
 import { getRepos, getPinnedRepos, getVercelProjects } from "../api/data-services";
@@ -41,10 +41,10 @@ export default async function ProjectsPage({ searchParams: { customUsername } })
  const chunkSize = Math.ceil(sorted.length / 3);
 
  return (
-  <div className="relative pb-16">
+  <div className="relative pt-12 pb-16 sm:pt-2 lg:pt-0">
    <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-12 md:pt-24 lg:pt-32">
     <div className="max-w-2xl mx-auto lg:mx-0">
-     <h2 className="text-md font-bold tracking-tight text-zinc-100 sm:text-2xl">Projects 🚀</h2>
+     <h2 className="text-md font-bold tracking-tight text-zinc-100 md:text-2xl lg:text-3xl">Projects 🚀</h2>
      <p className="mt-4 text-zinc-400">{customUsername ? `${customUsername}'s projects` : data.description}</p>
     </div>
 
@@ -79,22 +79,22 @@ export default async function ProjectsPage({ searchParams: { customUsername } })
      </>
     ) : null}
 
-    <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-2">
-     <div className="grid grid-cols-1 gap-4">
+    <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 lg:grid-cols-3">
+     <div className="grid grid-cols-1 space-y-2 lg:space-x-2 gap-4">
       {chunk(sorted, chunkSize)[0]?.map((project) => (
        <Card key={project.name}>
         <Article project={project} />
        </Card>
       ))}
      </div>
-     <div className="grid grid-cols-1 gap-4">
+     <div className="grid grid-cols-1 space-y-2 lg:space-x-2 gap-4">
       {chunk(sorted, chunkSize)[1]?.map((project) => (
        <Card key={project.name}>
         <Article project={project} />
        </Card>
       ))}
      </div>
-     <div className="grid grid-cols-1 gap-4">
+     <div className="grid grid-cols-1 space-y-2 lg:space-x-2 gap-4">
       {chunk(sorted, chunkSize)[2]?.map((project) => (
        <Card key={project.name}>
         <Article project={project} />

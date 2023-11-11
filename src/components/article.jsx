@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { EyeClosedIcon, EyeIcon, MarkGithubIcon, StarIcon, DependabotIcon } from "@primer/octicons-react";
-import { VercelInfo } from "../../components/vercel-info";
-import { getTrafficPageViews, getDependabotAlerts } from "../api/data-services";
+import { VercelInfo } from "./vercel-info";
+import { getTrafficPageViews, getDependabotAlerts } from "../app/api/data-services";
 
 export const Article = async ({ project }) => {
  const appLink = project.homepage ? project.homepage : project.html_url;

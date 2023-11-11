@@ -61,7 +61,7 @@ export const RecentActivity = async ({ username }) => {
 
  return (
   <div>
-   <span className="text-sm text-zinc-500">{activitySummaryString && "In last 90 days on GitHub  I " + activitySummaryString + " in public repositories."}</span>
+   <span className="text-sm text-zinc-500">{activitySummaryString && "In last 30 days on GitHub  I " + activitySummaryString + " in public repositories."}</span>
   </div>
  );
 };
