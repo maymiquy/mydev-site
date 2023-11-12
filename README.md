@@ -2,13 +2,15 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fmaymiquy%2Fmydev-portfolio&env=GH_TOKEN,VC_TOKEN)
 
-My personal portfolio website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and deployed to [Vercel](https://vercel.com/). Based on [chronark's site](https://chronark.com/).
+My personal portfolio website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and deployed to [Vercel](https://vercel.com/). Inspired by [chronark's site](https://chronark.com/).
 
 ## Tech stack
 
-- **Framework**: [Next.js](https://nextjs.org/)
+- **Programming Language**: [JavaScript](https://www.javascript.com)
+- **Framework**: [Next.js](https://nextjs.org/), [Node.js](https://www.npmjs.com)
+- **Library**: [React.js](https://react.dev), [Framer-Motion](https://www.framer.com/motion)
 - **Deployment**: [Vercel](https://vercel.com)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com), [Primer](https://primer.style/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com), [Primer](https://primer.style/), [NextUI](https://nextui.org)
 
 ## Running Locally
 
@@ -36,7 +38,7 @@ Then install dependencies and run the development server:
 ```sh
 # Install dependencies.
 npm install
-# Replace jirihofman's personal info with octocat's.
+# Replace my previous personal info.
 npm run setup
 # Start hacking.
 npm dev
@@ -54,4 +56,4 @@ Please remove all of my personal information in `data.json` before deploying you
 IS_TEMPLATE=false
 ```
 
-in your ENVs to prevent `npm build` from reverting `data.json` back to template data.
+in your ENVs to prevent `npm build` from reverting `data.json` .
