@@ -2,29 +2,11 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const ProfileData = async ({ promise }) => {
  await new Promise((resolve) => setTimeout(resolve, 3000));
  const user = await promise;
-
- const AnimatedText = () => {
-  const [count, setCount] = useState(0);
-  const [text] = useState(["Im full-stack web development", "Advanced in front-end developer", "Intermediate in back-end developer", "Interested in mobile development"]);
-
-  useEffect(() => {
-   const interval = setInterval(() => {
-    setCount((prevCount) => (prevCount === 3 ? 0 : prevCount + 1));
-   }, 2000);
-
-   return () => clearInterval(interval);
-  }, [count]);
-
-  return (
-   <div className="mt-3 relative flex flex-col overflow-hidden">
-    <p className="flex flex-col text-sm lg:text-2xl text-zinc-200 duration-200">{text[count]}.</p>
-   </div>
-  );
- };
 
  const TextGradient = () => {
   const [index, setIndex] = useState(0);
@@ -37,26 +19,35 @@ const ProfileData = async ({ promise }) => {
   useEffect(() => {
    const interval = setInterval(() => {
     setIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
-   }, 2000);
+   }, 1000);
 
    return () => clearInterval(interval);
   }, []);
 
   return <h1 className={`text-xl lg:text-3xl ${colors[index]} font-bold`}>{user.name}</h1>;
  };
+
+ const Typewriter = () => {
+  return (
+   <h1 className={`text-md lg:text-3xl text-zinc-100 font-bold`}>
+    <TypeAnimation sequence={["I'm a Full-stack developer", 1000, "Advanced Front-end developer", 1000, "Intermediate Back-end developer", 1000, "Interested in mobile development", 1000]} speed={50} repeat={Infinity} />
+   </h1>
+  );
+ };
+
  return (
-  <>
+  <div className="grid grid-cols-1 md:grid-cols-[1fr_0.4fr] lg:grid-cols-[1.5fr_0.7fr] gap-6 space-y-6 md:space-y-2 md:space-x-12 items-center">
    <div className="w-full text-center md:text-start mx-auto lg:mx-0">
-    <p className="text-lg lg:text-xl text-zinc-400">Hello i'm</p>
+    <p className="text-lg lg:text-xl text-zinc-400">Hello i'm,</p>
     <TextGradient />
     <p className="text-xs lg:text-xl text-zinc-500 font-md">I'm currently collage in {user.company}</p>
-    <AnimatedText />
+    <Typewriter />
    </div>
-   <div className="flex justify-center items-center w-72 h-72 rounded-full bg-zinc-300">
+   <div className="flex justify-center items-center w-40 h-40 lg:w-72 lg:h-72 mx-auto rounded-full bg-zinc-300">
     {" "}
     <Image alt="image profile" width={280} height={280} src={user.avatar_url} className="rounded-full" />
    </div>
-  </>
+  </div>
  );
 };
 

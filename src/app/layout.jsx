@@ -9,15 +9,14 @@ import NextUIProviders from "./providers";
 import ProgressBar from "../components/ui/progress-bar";
 
 const username = process.env.GITHUB_USERNAME || data.githubUsername;
-const displayName = data.displayName || username;
 
 /** @type {import('next').Metadata} */
 export const metadata = {
  title: {
-  default: [username, "'s portfolio"].join(""),
+  default: [username, " | Portfolio"].join(""),
   template: "%s | " + data.displayName + "'s portfolio",
  },
- description: "Portfolio " + displayName,
+ description: "Welcome to my portfolio site, I'm Miqdam Hambali a software developer.",
  robots: {
   index: true,
   follow: true,
