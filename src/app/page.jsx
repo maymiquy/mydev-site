@@ -32,7 +32,7 @@ export default function Home({ searchParams: { customUsername } }) {
    </nav>
    <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-   <div className="max-h-fit z-10 hover:scale-120 md:hover:scale-110 animate-title duration-1000 md:overflow-hidden flex flex-row justify-center">
+   <div className="max-h-fit z-10 hover:scale-110 animate-title duration-1000 md:overflow-hidden flex flex-row justify-center">
     <h1 className="md:flex items-center hidden bg-gradient-to-r from-zinc-400 to-zinc-100 hover:from-blue-700 hover:to-purple-700 text-transparent bg-clip-text cursor-default text-edge-outline font-display text-7xl md:text-9xl whitespace-nowrap">
      {username}
     </h1>
@@ -54,7 +54,7 @@ const UserIcon = async ({ promise }) => {
  await new Promise((resolve) => setTimeout(resolve, 3000));
  const user = await promise;
 
- return <Image alt="image" width={150} height={150} src={user.avatar_url || data.avatarUrl} className="rounded-full w-80 h-80 md:w-40 md:h-40 mb-4 md:mb-12" />;
+ return <Image alt="image" width={150} height={150} src={user.avatar_url || data.avatarUrl} className="rounded-full w-72 h-72 md:w-40 md:h-40 mb-4 md:mb-12" />;
 };
 
 const UserText = async ({ promise }) => {
