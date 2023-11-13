@@ -7,7 +7,7 @@ module.exports = {
 	content: [
 		"./src/app/**/*.{js,ts,jsx,tsx}",
 		"./src/components/**/*.{js,ts,jsx,tsx}",
-		'./node_modules/@nextui-org/theme/dist/components/(progress|spinner).{js,ts,jsx,tsx}',
+		'./node_modules/@nextui-org/theme/dist/components/(progress|spinner|tabs).{js,ts,jsx,tsx}',
 		// "./mdx-components.tsx",
 		// "content/**/*.mdx",
 	],

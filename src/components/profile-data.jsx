@@ -40,7 +40,7 @@ const ProfileData = async ({ promise }) => {
    <div className="w-full text-center md:text-start mx-auto lg:mx-0">
     <p className="text-lg lg:text-xl text-zinc-400">Hello i'm,</p>
     <TextGradient />
-    <p className="text-xs lg:text-xl text-zinc-500 font-md">I'm currently collage in {user.company}</p>
+    <p className="text-xs lg:text-xl text-zinc-500 font-md">I'm currently collage at {user.company}</p>
     <Typewriter />
    </div>
    <div className="flex justify-center items-center w-40 h-40 lg:w-72 lg:h-72 mx-auto rounded-full bg-zinc-300">

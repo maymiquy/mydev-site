@@ -64,9 +64,10 @@ const UserText = async ({ promise }) => {
 
  return (
   <>
-   <p>Hi, my name is </p>
+   <p className="block md:hidden">Hello, I'm </p>
+   <p className="hidden md:block text-sm font-bold">A.K.A</p>
    <p className="font-bold">{user.name || data.displayName}</p>
-   <p>Im a full-stack developer, Now i'm currently college in {user.company}.</p>
+   <p>Im a full-stack developer, Now i'm currently college at {user.company}.</p>
   </>
  );
 };
