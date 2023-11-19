@@ -8,11 +8,5 @@
  "projects": {
   "blacklist": [],
   "heroNames": []
- },
- "techStack": {
-  "language": ["HTML", "CSS", "JavaScript", "PHP", "Dart", "Python", "Java", "XML", "JSON"],
-  "frontEnd": ["React JS", "Next JS", "Tailwind", "Bootstrap", "SCSS"],
-  "backEnd": ["Laravel", "Node JS", "Express JS", "MongoDB", "MySQL"],
-  "mobile": ["React Native", "Flutter"]
  }
 }
