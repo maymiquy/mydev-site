@@ -92,7 +92,7 @@ export const Article = async ({ project }) => {
      className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display cursor-pointer"
      title={`Click to view the ${project.homepage ? "app" : "repo"}.`}
     >
-     <span className="bg-gradient-to-r from-zinc-100 to-zinc-100 hover:from-purple-700 hover:to-blue-700 text-transparent bg-clip-text">
+     <span className="bg-gradient-to-r from-zinc-100 to-zinc-300 hover:from-zinc-500 hover:to-zinc-700 text-transparent bg-clip-text">
       {project.name}
      </span>
     </h2>
@@ -100,18 +100,17 @@ export const Article = async ({ project }) => {
    <p className="z-20 mt-4 text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
     {project.description}
    </p>
-   <div className="flex justify-between gap-2 items-center float-left mt-2 border-t-2 border-gray-700 border-opacity-50">
-    <span className="text-zinc-500 text-xs">
-     {views} {alerts}
-    </span>
+   <div className="flex flex-row justify-between gap-2 p-1 float-left my-2 border-t-2 border-gray-700 border-opacity-50">
+    <span className="text-zinc-500 text-xs">{alerts}</span>
+    <span className="text-zinc-500 text-xs">{views}</span>
    </div>
-   <div className="flex justify-between gap-2 items-center float-right mt-2 border-t-2 border-gray-700 border-opacity-50">
+   <div className="flex justify-between gap-2 p-1 float-right my-2 border-t-2 border-gray-700 border-opacity-50">
     <span
      className="text-zinc-500 text-xs align-middle flex items-center gap-1"
      title="GitHub repository link."
     >
      <SiGithub className="w-4 h-4" />
-     <Link href={project.html_url} className="hover:text-blue-800">
+     <Link href={project.html_url} className="hover:text-zinc-700">
       {project.name}
      </Link>
     </span>
