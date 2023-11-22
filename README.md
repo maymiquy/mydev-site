@@ -40,15 +40,15 @@ Then install dependencies and run the development server:
 npm install
 # Replace my previous personal info.
 npm run setup
-# Start hacking.
-npm dev
+# Start deployment
+npm run dev
 ```
 
 Edit `data.json` to put your personal information there.
 
 ## Cloning / Forking
 
-Please remove all of my personal information in `data.json` before deploying your own version of this site by running `npm run setup`. Once you are happy with your `data.json`, set
+Please remove all of my personal information in `data.json` before deploying your own version of this site by running `npm run setup`.
 
 ```sh
 # .env or .env.local

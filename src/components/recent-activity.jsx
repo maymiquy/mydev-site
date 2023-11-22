@@ -1,6 +1,6 @@
 import { getRecentUserActivity } from "../app/api/data-services";
 
-export const RecentActivity = async ({ username }) => {
+export const RecentActivity = async ({ username, className }) => {
  const recentUserActivity = await getRecentUserActivity(username);
  const activitySummary = recentUserActivity.reduce((acc, activity) => {
   if (activity.type === "PushEvent") {
@@ -18,7 +18,10 @@ export const RecentActivity = async ({ username }) => {
    acc.prsOpened = acc.prsOpened || 0;
    acc.prsOpened += activity.payload.action === "opened" ? 1 : 0;
    acc.prsMerged = acc.prsMerged || 0;
-   acc.prsMerged += activity.payload.action === "closed" && activity.payload.pull_request.merged ? 1 : 0;
+   acc.prsMerged +=
+    activity.payload.action === "closed" && activity.payload.pull_request.merged
+     ? 1
+     : 0;
   } else if (activity.type === "CreateEvent") {
    if (activity.payload.ref_type === "tag") {
     acc.tags = acc.tags || 0;
@@ -60,8 +63,13 @@ export const RecentActivity = async ({ username }) => {
   .join(", ");
 
  return (
-  <div>
-   <span className="text-sm text-zinc-500">{activitySummaryString && "In last 30 days on GitHub  I " + activitySummaryString + " in public repositories."}</span>
+  <div className={`${className}`}>
+   <span className="text-sm font-semibold text-zinc-500">
+    {activitySummaryString &&
+     "In last week on GitHub  I " +
+      activitySummaryString +
+      " in public repositories."}
+   </span>
   </div>
  );
 };
