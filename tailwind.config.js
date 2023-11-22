@@ -7,9 +7,7 @@ module.exports = {
 	content: [
 		"./src/app/**/*.{js,ts,jsx,tsx}",
 		"./src/components/**/*.{js,ts,jsx,tsx}",
-		'./node_modules/@nextui-org/theme/dist/components/(spinner|tabs|avatar).{js,ts,jsx,tsx}',
-		// "./mdx-components.tsx",
-		// "content/**/*.mdx",
+		'./node_modules/@nextui-org/theme/dist/components/(spinner|tabs).{js,ts,jsx,tsx}',
 	],
 
 	theme: {

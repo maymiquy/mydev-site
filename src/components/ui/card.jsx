@@ -20,7 +20,6 @@ export const Card = ({ children, classname }) => {
     <motion.div className="absolute inset-0 z-10 bg-gradient-to-br opacity-100 via-zinc-100/10 transition duration-1000 group-hover:opacity-50" style={style} />
     <motion.div className="absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100" style={style} />
    </div>
-
    {children}
   </div>
  );

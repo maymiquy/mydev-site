@@ -1,6 +1,6 @@
 {
  "name": "mydev-portfolio",
- "version": "1.0.1",
+ "version": "1.1.0",
  "private": false,
  "scripts": {
   "dev": "next dev",
@@ -11,7 +11,6 @@
  },
  "dependencies": {
   "@icons-pack/react-simple-icons": "^9.1.0",
-  "@nextui-org/avatar": "^2.0.24",
   "@nextui-org/spinner": "^2.0.19",
   "@nextui-org/system": "^2.0.15",
   "@nextui-org/tabs": "^2.0.26",
@@ -26,7 +25,6 @@
   "nextjs-toploader": "^1.6.4",
   "react": "^18.2.0",
   "react-dom": "^18.2.0",
-  "react-icons": "^4.8.0",
   "react-type-animation": "^3.2.0",
   "react-wrap-balancer": "^0.4.0"
  },

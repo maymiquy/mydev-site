@@ -1,30 +1,42 @@
-import ProfileData from "../../components/profile-data";
+import ProfileHero from "../../components/profile-hero";
 import { getUser } from "../api/data-services";
 import data from "../../lib/data.json";
 import { ContainerAnimation } from "../../components/ui/container";
 import TechStack from "../../components/tech-stack";
+import { FileIcon } from "@primer/octicons-react";
+import Link from "next/link";
 
 export default function ProfilePage({ searchParams: { customUsername } }) {
- const username = customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
+ const username =
+  customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
  const promise = getUser(username);
 
  return (
   <div className="relative w-full min-h-screen">
    <ContainerAnimation>
-    <div className="flex justify-center mx-auto max-w-7xl px-2 lg:px-4 pt-44 md:pt-24 lg:pt-32">
-     <ProfileData promise={promise} />
-    </div>
-    <div className="flex justify-center max-w-fit bg-zinc-600 mx-auto mt-28 mb-16">
-     <h1 className="text-zinc-100 text-3xl">Button</h1>
-    </div>
+    <ProfileHero promise={promise} />
    </ContainerAnimation>
-   <div className="w-full h-px bg-zinc-800" />
-   <div className="h-fit w-full py-24 px-6 space-y-10">
-    <div className="text-center items-center">
-     <h1 className="text-3xl text-zinc-100">Tech Stack</h1>
-     <p className="text-zinc-600 text-md"> I also have the experience technology in both front-end and back-end. </p>
+   <div className="flex justify-center items-center w-full h-px bg-zinc-800">
+    <Link
+     href="/CV-MiqdamHambali.pdf"
+     target="_blank"
+     className="flex flex-row justify-center items-center w-fit h-fit rounded-lg duration-700 bg-zinc-700 hover:bg-zinc-800 p-3 space-x-2"
+    >
+     <FileIcon className="w-6 h-6 text-zinc-100" />
+     <p className="text-zinc-100 font-semibold text-sm">Resume</p>
+    </Link>
+   </div>
+
+   <div className="h-fit w-full py-24 px-6">
+    <div className="flex flex-col justify-center items-center space-y-6">
+     <div className="text-center items-center">
+      <h1 className="text-3xl text-zinc-100">Tech Stack</h1>
+      <p className="text-zinc-600 text-md">
+       My experience technology in software development.
+      </p>
+     </div>
+     <TechStack />
     </div>
-    <TechStack />
    </div>
   </div>
  );

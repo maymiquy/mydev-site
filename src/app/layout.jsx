@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import data from "../lib/data.json";
-import { Loading } from "../components/ui/loading";
-import { Suspense } from "react";
 import NextUIProviders from "./providers";
 import ProgressBar from "../components/ui/progress-bar";
 
@@ -13,10 +11,11 @@ const username = process.env.GITHUB_USERNAME || data.githubUsername;
 /** @type {import('next').Metadata} */
 export const metadata = {
  title: {
-  default: [username, " | Portfolio"].join(""),
-  template: "%s | " + data.displayName + "'s portfolio",
+  default: ["Miqdam Hambali | Portfolio"].join(""),
+  template: data.displayName + "'s portfolio",
  },
- description: "Welcome to my portfolio site, I'm Miqdam Hambali a software developer.",
+ description:
+  "Welcome to my portfolio site, I'm Miqdam Hambali a full-stack developer.",
  robots: {
   index: true,
   follow: true,
@@ -49,14 +48,16 @@ const calSans = LocalFont({
 
 export default function RootLayout({ children }) {
  return (
-  <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-   <body className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : ""}`}>
+  <html lang="en" className={[calSans.variable, inter.variable].join(" ")}>
+   <body
+    className={`bg-black ${
+     process.env.NODE_ENV === "development" ? "debug-screens" : ""
+    }`}
+   >
     <NextUIProviders>
-     <Suspense fallback={<Loading />}>
-      <ProgressBar />
-      <Analytics />
-      {children}
-     </Suspense>
+     <ProgressBar />
+     <Analytics />
+     {children}
     </NextUIProviders>
    </body>
   </html>

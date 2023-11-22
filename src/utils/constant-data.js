@@ -31,11 +31,10 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 
-
 export const TechData = [
    {
       category: "Language",
-      description: "Knowledge languages",
+      description: "Knowledge Language",
       items: [
          { name: "HTML", icon: <SiHtml5 size={40} color="#E34F26" /> },
          { name: "CSS", icon: <SiCss3 size={40} color="#1572B6" /> },
@@ -75,7 +74,7 @@ export const TechData = [
    },
    {
       category: "Tools",
-      description: "Knowledge of Tools and DevOps",
+      description: "Knowledge Tools",
       items: [
          { name: "Git", icon: <SiGit size={40} color="#f4511e" /> },
          { name: "GitHub", icon: <SiGithub size={40} color="#ffffff" /> },
@@ -87,3 +86,7 @@ export const TechData = [
       ]
    }
 ];
+
+export const getInitAbout = [
+   { question: "Who am i ?", answer: "Im Miqdam Ferdiansyah Hambali " },
+]
