@@ -3,10 +3,23 @@ import { Card } from "../../components/ui/card";
 import { Article } from "../../components/article";
 import chunk from "lodash/chunk";
 import data from "../../lib/data.json";
-import { getRepos, getPinnedRepos, getVercelProjects } from "../api/data-services";
-export default async function ProjectsPage({ searchParams: { customUsername } }) {
- const username = customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
- const [repositories, pinnedNames, vercelProjects] = await Promise.all([getRepos(username), getPinnedRepos(username), getVercelProjects()]);
+import { RecentActivity } from "../../components/recent-activity";
+import {
+ getRepos,
+ getPinnedRepos,
+ getVercelProjects,
+} from "../api/data-services";
+
+export default async function ProjectsPage({
+ searchParams: { customUsername },
+}) {
+ const username =
+  customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
+ const [repositories, pinnedNames, vercelProjects] = await Promise.all([
+  getRepos(username),
+  getPinnedRepos(username),
+  getVercelProjects(),
+ ]);
 
  const vercelProjectsDetails = vercelProjects.projects
   .filter((project) => {
@@ -22,13 +35,17 @@ export default async function ProjectsPage({ searchParams: { customUsername } })
   }));
 
  repositories.forEach((repo) => {
-  const vercelRepo = vercelProjectsDetails.find((vercelRepo) => vercelRepo.name === repo.name);
+  const vercelRepo = vercelProjectsDetails.find(
+   (vercelRepo) => vercelRepo.name === repo.name,
+  );
   if (vercelRepo) {
    repo.vercel = vercelRepo;
   }
  });
 
- const heroes = repositories.filter((project) => pinnedNames.includes(project.name)).sort((a, b) => b.stargazers_count - a.stargazers_count);
+ const heroes = repositories
+  .filter((project) => pinnedNames.includes(project.name))
+  .sort((a, b) => b.stargazers_count - a.stargazers_count);
  const sorted = repositories
   .filter((p) => !p.private)
   .filter((p) => !p.fork)
@@ -36,21 +53,27 @@ export default async function ProjectsPage({ searchParams: { customUsername } })
   // .filter((p) => p.name !== username)
   .filter((p) => !pinnedNames.includes(p.name))
   .filter((p) => !data.projects.blacklist.includes(p.name))
-  .sort((a, b) => new Date(b.updated_at ?? Number.POSITIVE_INFINITY).getTime() - new Date(a.updated_at ?? Number.POSITIVE_INFINITY).getTime());
+  .sort(
+   (a, b) =>
+    new Date(b.updated_at ?? Number.POSITIVE_INFINITY).getTime() -
+    new Date(a.updated_at ?? Number.POSITIVE_INFINITY).getTime(),
+  );
 
  const chunkSize = Math.ceil(sorted.length / 3);
 
  return (
   <div className="relative pt-12 pb-16 sm:pt-2 lg:pt-0">
    <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-12 md:pt-24 lg:pt-32">
-    <div className="max-w-2xl mx-auto lg:mx-0">
-     <h2 className="text-md font-bold tracking-tight text-zinc-100 md:text-2xl lg:text-3xl">Projects 🚀</h2>
-     <p className="mt-4 text-zinc-400">{customUsername ? `${customUsername}'s projects` : data.description}</p>
+    <div className="w-full mx-auto lg:mx-0">
+     <h2 className="text-md font-bold tracking-tighter text-zinc-100 md:text-2xl lg:text-3xl">
+      {customUsername ? `${customUsername}'s projects` : data.description} 🚀
+     </h2>
+     <RecentActivity username={username} className={"mt-4"} />
+     <div className="w-full h-px bg-zinc-800 mt-2" />
     </div>
 
     {heroes.length ? (
      <>
-      <div className="w-full h-px bg-zinc-800" />
       <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
        {heroes[0] || heroes[2] ? (
         <div className="grid grid-cols-1 gap-4">

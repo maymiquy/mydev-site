@@ -5,9 +5,9 @@ import dataJson from './data.json' assert { type: "json" };
 
 const data = {
 	description: "this template",
-	githubUsername: "usename templlate",
+	githubUsername: "username template",
 	avatarUrl: "",
-	displayName: "display nametemplate",
+	displayName: "display name template",
 	email: "template@email.com",
 	socials: {},
 };
