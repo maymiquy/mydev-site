@@ -22,16 +22,18 @@ export default function ProfilePage({ searchParams: { customUsername } }) {
      target="_blank"
      className="flex flex-row justify-center items-center w-fit h-fit rounded-lg duration-700 bg-zinc-700 hover:bg-zinc-800 p-3 space-x-2"
     >
-     <FileIcon className="w-6 h-6 text-zinc-100" />
-     <p className="text-zinc-100 font-semibold text-sm">Resume</p>
+     <FileIcon className="w-6 h-6 sm:h-3 sm:w-3 text-zinc-100" />
+     <p className="text-zinc-100 font-semibold text-xs md:text-sm">Resume</p>
     </Link>
    </div>
 
    <div className="h-fit w-full py-24 px-6">
     <div className="flex flex-col justify-center items-center space-y-6">
      <div className="text-center items-center">
-      <h1 className="text-3xl text-zinc-100">Tech Stack</h1>
-      <p className="text-zinc-600 text-md">
+      <h1 className="text-lg sm:text-xl md:text-3xl font-semibold text-zinc-100">
+       Tech Stack
+      </h1>
+      <p className="text-zinc-600 text-xs md:text-lg">
        My experience technology in software development.
       </p>
      </div>

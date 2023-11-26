@@ -6,7 +6,7 @@ const ProfileHero = async ({ promise }) => {
  const user = await promise;
 
  return (
-  <div className="flex justify-center mx-auto max-w-7xl px-2 lg:px-4 pt-44 md:pt-24 lg:pt-32">
+  <div className="flex justify-center mx-auto max-w-7xl px-2 lg:px-4 pt-36 md:pt-24 lg:pt-32 pb-16 md:pb-0">
    <div className="grid grid-cols-1 md:grid-cols-[1fr_0.4fr] lg:grid-cols-[1.5fr_0.7fr] gap-6 space-y-8 md:space-y-2 md:space-x-12 items-center">
     <div className="w-full text-center md:text-start mx-auto lg:mx-0">
      <p className="text-lg lg:text-xl text-zinc-400">Hello i'm,</p>

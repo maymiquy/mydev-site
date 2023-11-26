@@ -4,7 +4,9 @@ import LocalFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import data from "../lib/data.json";
 import NextUIProviders from "./providers";
-import ProgressBar from "../components/ui/progress-bar";
+import React, { Suspense } from "react";
+import { Loading } from "../components/ui/loading";
+import NextTopLoader from "nextjs-toploader";
 
 const username = process.env.GITHUB_USERNAME || data.githubUsername;
 
@@ -59,9 +61,19 @@ export default function RootLayout({ children }) {
     }`}
    >
     <NextUIProviders>
-     <ProgressBar />
+     <NextTopLoader
+      color="#ffff"
+      initialPosition={0.08}
+      crawlSpeed={50}
+      height={5}
+      crawl={true}
+      showSpinner={true}
+      easing="ease"
+      speed={50}
+      shadow="0 0 10px #ffff,0 0 5px #ffff"
+     />
      <Analytics />
-     {children}
+     <Suspense fallback={<Loading />}>{children}</Suspense>
     </NextUIProviders>
    </body>
   </html>
