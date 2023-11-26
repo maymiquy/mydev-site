@@ -33,7 +33,7 @@ const data = {
 	console.log('⚙️  Reverting personal data to template data...');
 
 
-	const faviconPath = path.join(process.cwd(), 'public', 'favicon.ico');
+	const faviconPath = path.join(process.cwd(), 'public', 'maymiquy.png');
 	await fs.unlink(faviconPath);
 	console.log('⚙️  Removed favicon.ico');
 

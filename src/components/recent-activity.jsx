@@ -46,9 +46,9 @@ export const RecentActivity = async ({ username, className }) => {
    } else if (key === "reviews" && value) {
     return `reviewed ${value} PR${value === 1 ? "" : "s"}`;
    } else if (key === "prsOpened" && value) {
-    return `opened ${value} Pull Request${value === 1 ? "" : "s"}`;
+    return `opened ${value} PR${value === 1 ? "" : "s"}`;
    } else if (key === "prsMerged" && value) {
-    return `merged ${value} Pull Request${value === 1 ? "" : "s"}`;
+    return `merged ${value} PR${value === 1 ? "" : "s"}`;
    } else if (key === "commentsCreated" && value) {
     return `made ${value} comment${value === 1 ? "" : "s"}`;
    } else if (key === "branches" && value) {
@@ -64,9 +64,9 @@ export const RecentActivity = async ({ username, className }) => {
 
  return (
   <div className={`${className}`}>
-   <span className="text-sm sm:text-xs font-semibold text-zinc-500">
+   <span className="text-xs md:text-sm font-semibold tracking-tight text-zinc-500">
     {activitySummaryString &&
-     "In last week on GitHub  I " +
+     "In last month on GitHub  I " +
       activitySummaryString +
       " in public repositories."}
    </span>
