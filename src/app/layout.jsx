@@ -11,11 +11,20 @@ const username = process.env.GITHUB_USERNAME || data.githubUsername;
 /** @type {import('next').Metadata} */
 export const metadata = {
  title: {
-  default: ["Miqdam Hambali | Portfolio"].join(""),
-  template: data.displayName + "'s portfolio",
+  default: "maymiquy.dev",
+  template: username + "'s portfolio",
  },
  description:
-  "Welcome to my portfolio site, I'm Miqdam Hambali a full-stack developer.",
+  "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer.",
+ openGrahph: {
+  title: "Miqdam Hambali" + " | " + "Portfolio",
+  description:
+   "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer",
+  url: "https://mydev-portfolio.vercel.app",
+  siteName: "maymiquy.dev",
+  locale: "en-US",
+  type: "webiste",
+ },
  robots: {
   index: true,
   follow: true,
@@ -27,14 +36,9 @@ export const metadata = {
    "max-snippet": -1,
   },
  },
- icons: [
-  {
-   url: "/favicon.ico",
-   rel: "icon",
-   sizes: "any",
-   type: "image/svg+xml",
-  },
- ],
+ icons: {
+  shortcut: "/maymiquy.png",
+ },
 };
 const inter = Inter({
  subsets: ["latin"],
