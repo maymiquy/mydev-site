@@ -13,19 +13,27 @@ const username = process.env.GITHUB_USERNAME || data.githubUsername;
 /** @type {import('next').Metadata} */
 export const metadata = {
  title: {
-  default: "maymiquy.dev",
+  default: "Miqdam Hambali | Portfolio",
   template: username + "'s portfolio",
  },
  description:
   "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer.",
- openGrahph: {
-  title: "Miqdam Hambali" + " | " + "Portfolio",
+ keywords: [
+  "Miqdam Hambali",
+  "Miqdam",
+  "portfolio",
+  "website portfolio",
+  "Miqdam Hambali - Portfolio",
+  "Miqdam Portfolio",
+ ],
+ openGraph: {
+  title: "Miqdam Hambali | Portfolio",
   description:
    "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer",
   url: "https://mydev-portfolio.vercel.app",
-  siteName: "maymiquy.dev",
+  siteName: "Miqdam Hambali | Portfolio",
   locale: "en-US",
-  type: "webiste",
+  type: "website",
  },
  robots: {
   index: true,
@@ -39,7 +47,7 @@ export const metadata = {
   },
  },
  icons: {
-  shortcut: "/maymiquy.png",
+  shortcut: "/icon.png",
  },
 };
 const inter = Inter({
@@ -55,6 +63,9 @@ const calSans = LocalFont({
 export default function RootLayout({ children }) {
  return (
   <html lang="en" className={[calSans.variable, inter.variable].join(" ")}>
+   <head>
+    <Analytics />
+   </head>
    <body
     className={`bg-black ${
      process.env.NODE_ENV === "development" ? "debug-screens" : ""
@@ -72,7 +83,6 @@ export default function RootLayout({ children }) {
       speed={50}
       shadow="0 0 10px #ffff,0 0 5px #ffff"
      />
-     <Analytics />
      <Suspense fallback={<Loading />}>{children}</Suspense>
     </NextUIProviders>
    </body>
