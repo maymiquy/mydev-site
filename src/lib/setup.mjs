@@ -31,10 +31,6 @@ const data = {
 
 	console.log('⚠️  This is still a template. Please update data.json file and set IS_TEMPLATE to false in .env.local to use your data');
 	console.log('⚙️  Reverting personal data to template data...');
-
-
-	const faviconPath = path.join(process.cwd(), 'public', 'maymiquy.png');
-	await fs.unlink(faviconPath);
 	console.log('⚙️  Removed favicon.ico');
 
 

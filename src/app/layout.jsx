@@ -18,14 +18,14 @@ export const metadata = {
  },
  description:
   "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer.",
- openGrahph: {
-  title: "Miqdam Hambali" + " | " + "Portfolio",
+ openGraph: {
+  title: "maymiquy.dev",
   description:
    "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer",
   url: "https://mydev-portfolio.vercel.app",
   siteName: "maymiquy.dev",
   locale: "en-US",
-  type: "webiste",
+  type: "website",
  },
  robots: {
   index: true,
@@ -55,6 +55,9 @@ const calSans = LocalFont({
 export default function RootLayout({ children }) {
  return (
   <html lang="en" className={[calSans.variable, inter.variable].join(" ")}>
+   <head>
+    <Analytics />
+   </head>
    <body
     className={`bg-black ${
      process.env.NODE_ENV === "development" ? "debug-screens" : ""
@@ -72,7 +75,6 @@ export default function RootLayout({ children }) {
       speed={50}
       shadow="0 0 10px #ffff,0 0 5px #ffff"
      />
-     <Analytics />
      <Suspense fallback={<Loading />}>{children}</Suspense>
     </NextUIProviders>
    </body>
