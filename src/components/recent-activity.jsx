@@ -64,7 +64,7 @@ export const RecentActivity = async ({ username, className }) => {
 
  return (
   <div className={`${className}`}>
-   <span className="text-xs md:text-sm font-semibold tracking-tight text-zinc-500">
+   <span className="text-xs md:text-sm font-semibold animate-glow font-sans text-zinc-500">
     {activitySummaryString &&
      "In last month on GitHub  I " +
       activitySummaryString +

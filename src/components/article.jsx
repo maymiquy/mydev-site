@@ -78,7 +78,7 @@ export const Article = async ({ project }) => {
      {project.vercel && (
       <VercelInfo info={{ ...project.vercel, owner: project.owner }} />
      )}
-     <span title="Total stars.">
+     <span title="Total stars." className="items-center">
       <StarIcon className="w-4 h-4" />{" "}
       {Intl.NumberFormat("en-US", { notation: "compact" }).format(
        project.stargazers_count,
@@ -97,7 +97,7 @@ export const Article = async ({ project }) => {
      </span>
     </h2>
    </Link>
-   <p className="z-20 mt-4 text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
+   <p className="z-20 mt-4 text-sm font-sans duration-1000 text-zinc-400 group-hover:text-zinc-200">
     {project.description}
    </p>
    <div className="flex flex-row justify-between gap-2 p-1 float-left my-2 border-t-2 border-gray-700 border-opacity-50">

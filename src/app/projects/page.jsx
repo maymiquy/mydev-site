@@ -65,8 +65,8 @@ export default async function ProjectsPage({
   <div className="relative pt-12 pb-16 sm:pt-2 lg:pt-0">
    <div className="px-6 pt-16 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-12 md:pt-24 lg:pt-32">
     <div className="w-full mx-auto lg:mx-0">
-     <h2 className="text-md sm:text-lg font-bold tracking-tight text-zinc-100 md:text-2xl lg:text-3xl">
-      {customUsername ? `${customUsername}'s projects` : data.description} 🚀
+     <h2 className="text-xl font-bold text-zinc-100 md:text-2xl lg:text-3xl">
+      Projects
      </h2>
      <RecentActivity username={username} className={"mt-4"} />
      <div className="w-full h-px bg-zinc-800 mt-2" />

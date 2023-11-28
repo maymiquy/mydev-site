@@ -22,8 +22,10 @@ export default function ProfilePage({ searchParams: { customUsername } }) {
      target="_blank"
      className="flex flex-row justify-center items-center w-fit h-fit rounded-lg duration-700 bg-zinc-700 hover:bg-zinc-800 p-3 space-x-2"
     >
-     <FileIcon className="w-6 h-6 sm:h-3 sm:w-3 text-zinc-100" />
-     <p className="text-zinc-100 font-semibold text-xs md:text-sm">Resume</p>
+     <FileIcon className="w-3 h-3 sm:h-4 sm:w-4 text-zinc-100" />
+     <p className="text-zinc-100 font-semibold font-sans text-xs md:text-sm">
+      Resume
+     </p>
     </Link>
    </div>
 
@@ -33,7 +35,7 @@ export default function ProfilePage({ searchParams: { customUsername } }) {
       <h1 className="text-lg sm:text-xl md:text-3xl font-semibold text-zinc-100">
        Tech Stack
       </h1>
-      <p className="text-zinc-600 text-xs md:text-lg">
+      <p className="text-zinc-500 text-sm md:text-md font-medium">
        My experience technology in software development.
       </p>
      </div>
