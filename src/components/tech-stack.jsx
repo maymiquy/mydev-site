@@ -29,7 +29,9 @@ export default function TechStack() {
            key={item.name}
            className="flex flex-col justify-center items-center gap-1"
           >
-           <span className="flex justify-center">{item.icon}</span>
+           <span className="flex justify-center w-7 h-7 md:w-13 md:h-13">
+            {item.icon}
+           </span>
            <p className="text-zinc-400 text-[10px] sm:text-xs font-semibold">
             {item.name}
            </p>

@@ -16,7 +16,7 @@ export const ContainerAnimation = ({ children }) => {
  return (
   <div
    onMouseMove={onMouseMove}
-   className="relative min-h-max xl:min-h-screen w-full duration-700"
+   className="relative min-h-max lg:min-h-screen w-full duration-700"
   >
    <div className="pointer-events-none">
     <div className="absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />

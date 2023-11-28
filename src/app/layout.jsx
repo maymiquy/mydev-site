@@ -50,6 +50,7 @@ export const metadata = {
   shortcut: "/icon.png",
  },
 };
+
 const inter = Inter({
  subsets: ["latin"],
  variable: "--font-inter",
@@ -67,7 +68,7 @@ export default function RootLayout({ children }) {
     <Analytics />
    </head>
    <body
-    className={`bg-black ${
+    className={`bg-black font-display ${
      process.env.NODE_ENV === "development" ? "debug-screens" : ""
     }`}
    >
