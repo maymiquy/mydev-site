@@ -10,7 +10,7 @@
   "setup": "node ./src/lib/setup.mjs"
  },
  "dependencies": {
-  "@icons-pack/react-simple-icons": "^9.1.0",
+  "@icons-pack/react-simple-icons": "^9.2.0",
   "@nextui-org/spinner": "^2.0.19",
   "@nextui-org/system": "^2.0.15",
   "@nextui-org/tabs": "^2.0.26",
