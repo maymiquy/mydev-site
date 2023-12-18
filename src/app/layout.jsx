@@ -9,6 +9,7 @@ import { Loading } from "../components/ui/loading";
 import NextTopLoader from "nextjs-toploader";
 
 const username = process.env.GITHUB_USERNAME || data.githubUsername;
+const displayName = process.env.GITHUB_NAME || data.displayName;
 
 /** @type {import('next').Metadata} */
 export const metadata = {
@@ -30,10 +31,15 @@ export const metadata = {
   title: "Miqdam Hambali | Portfolio",
   description:
    "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer",
-  url: "https://mydev-portfolio.vercel.app",
+  url: "https://miqdamhambali-portfolio.vercel.app",
   siteName: "Miqdam Hambali | Portfolio",
   locale: "en-US",
   type: "website",
+  images: {
+   url: "https://miqdamhambali-portfolio.vercel.app/og.png",
+   width: 1920,
+   height: 1080,
+  },
  },
  robots: {
   index: true,
