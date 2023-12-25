@@ -16,7 +16,7 @@
   "@nextui-org/tabs": "^2.0.26",
   "@nextui-org/theme": "^2.1.17",
   "@primer/octicons-react": "^19.6.0",
-  "@primer/react": "^35.28.0",
+  "@primer/react": "^36.5.0",
   "@vercel/analytics": "^1.0.1",
   "dotenv": "^16.0.3",
   "framer-motion": "^10.16.4",
