@@ -19,7 +19,7 @@
   "@primer/react": "^35.28.0",
   "@vercel/analytics": "^1.0.1",
   "dotenv": "^16.0.3",
-  "framer-motion": "^10.16.4",
+  "framer-motion": "^11.0.14",
   "lodash": "^4.17.21",
   "next": "^14.0.1",
   "nextjs-toploader": "^1.6.4",
