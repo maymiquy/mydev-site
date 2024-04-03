@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import dataJson from './data.json' assert { type: "json" };
+import dataJson from '../utils/data.json' assert { type: "json" };
 
 const data = {
 	description: "this template",
