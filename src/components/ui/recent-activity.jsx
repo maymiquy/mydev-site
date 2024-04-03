@@ -1,4 +1,4 @@
-import { getRecentUserActivity } from "../app/api/data-services";
+import { getRecentUserActivity } from "../../app/api/data-services";
 
 export const RecentActivity = async ({ username, className }) => {
  const recentUserActivity = await getRecentUserActivity(username);

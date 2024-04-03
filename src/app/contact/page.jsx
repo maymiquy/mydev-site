@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Card } from "../../components/ui/card";
-import data from "../../lib/data.json";
+import { Card } from "../../components/partials/card";
+import data from "../../utils/data.json";
 import { getUser, getSocialAccounts } from "../api/data-services";
 import {
  SiInstagram,

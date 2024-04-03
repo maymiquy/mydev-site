@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AnimationBounce, Typewriter } from "./ui/animation";
+import { AnimationBounce, Typewriter } from "../partials/animation";
 
 const ProfileHero = async ({ promise }) => {
  await new Promise((resolve) => setTimeout(resolve, 3000));

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import data from "../lib/data.json";
+import data from "../utils/data.json";
 import { getUser } from "./api/data-services";
-import { AnimationBounce } from "../components/ui/animation";
+import { AnimationBounce } from "../components/partials/animation";
 
 const navigation = [
  { name: "Profile", href: "/profile" },

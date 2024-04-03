@@ -4,7 +4,7 @@ import { VercelInfo } from "./vercel-info";
 import {
  getTrafficPageViews,
  getDependabotAlerts,
-} from "../app/api/data-services";
+} from "../../app/api/data-services";
 import { SiGithub, SiDependabot } from "@icons-pack/react-simple-icons";
 
 export const Article = async ({ project }) => {

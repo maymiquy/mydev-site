@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getUserOrganizations } from "../app/api/data-services";
+import { getUserOrganizations } from "../../app/api/data-services";
 
 export const ProfileOrganizations = async ({ username }) => {
- const organizations = (await getUserOrganizations(username)).data.user?.organizations.nodes;
+ const organizations = (await getUserOrganizations(username)).data.user
+  ?.organizations.nodes;
 
  return (
   <p>
@@ -17,9 +18,20 @@ export const ProfileOrganizations = async ({ username }) => {
        <span key={org.name}>
         {i > 0 && i < a.length - 1 && ", "}
         {i > 0 && i === a.length - 1 && " and "}
-        <Link target="_blank" href={org.websiteUrl || org.url} className="underline duration-500 hover:text-zinc-300">
+        <Link
+         target="_blank"
+         href={org.websiteUrl || org.url}
+         className="underline duration-500 hover:text-zinc-300"
+        >
          <span className="text">{org.name}</span>
-         <Image className="ms-1 inline-block rounded-md" src={org.avatarUrl} alt={org.name} title={[org.name, org.description].filter((o) => !!o).join(": ")} width={24} height={24} />
+         <Image
+          className="ms-1 inline-block rounded-md"
+          src={org.avatarUrl}
+          alt={org.name}
+          title={[org.name, org.description].filter((o) => !!o).join(": ")}
+          width={24}
+          height={24}
+         />
         </Link>
        </span>
       ))}

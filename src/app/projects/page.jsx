@@ -1,9 +1,9 @@
 import React from "react";
-import { Card } from "../../components/ui/card";
-import { Article } from "../../components/article";
+import { Card } from "../../components/partials/card";
+import { Article } from "../../components/ui/article";
 import chunk from "lodash/chunk";
-import data from "../../lib/data.json";
-import { RecentActivity } from "../../components/recent-activity";
+import data from "../../utils/data.json";
+import { RecentActivity } from "../../components/ui/recent-activity";
 import {
  getRepos,
  getPinnedRepos,

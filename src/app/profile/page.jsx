@@ -1,8 +1,8 @@
-import ProfileHero from "../../components/profile-hero";
+import ProfileHero from "../../components/ui/profile-hero";
 import { getUser } from "../api/data-services";
-import data from "../../lib/data.json";
-import { ContainerAnimation } from "../../components/ui/container";
-import TechStack from "../../components/tech-stack";
+import data from "../../utils/data.json";
+import { ContainerAnimation } from "../../components/partials/container";
+import TechStack from "../../components/ui/tech-stack";
 import { FileIcon } from "@primer/octicons-react";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ export default function ProfilePage({ searchParams: { customUsername } }) {
    </ContainerAnimation>
    <div className="flex justify-center items-center w-full h-px bg-zinc-800">
     <Link
-     href="/CV-MiqdamHambali.pdf"
+     href="/CV-MiqdamHambali(2).pdf"
      target="_blank"
      className="flex flex-row justify-center items-center w-fit h-fit rounded-lg duration-700 bg-zinc-700 hover:bg-zinc-800 p-3 space-x-2"
     >
