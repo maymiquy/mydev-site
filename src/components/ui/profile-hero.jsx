@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { AnimationBounce, Typewriter } from "../partials/animation";
+import {
+ AnimationBounce,
+ BounceOnload,
+ Typewriter,
+} from "../partials/animation";
 
 const ProfileHero = async ({ promise }) => {
  await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -13,16 +17,20 @@ const ProfileHero = async ({ promise }) => {
     <div className="w-full text-center md:text-start mx-auto lg:mx-0">
      <div className="text-xl lg:text-3xl text-edge-outline font-display">
       {sentence.map((word, index) => (
-       <AnimationBounce key={index}>
-        {word === " " ? "\u00A0" : word}
-       </AnimationBounce>
+       <BounceOnload>
+        <AnimationBounce key={index}>
+         {word === " " ? "\u00A0" : word}
+        </AnimationBounce>
+       </BounceOnload>
       ))}
      </div>
      <div className="inline-block text-2xl md:text-6xl font-bold text-edge-outline font-display whitespace-nowrap">
       {name.map((word, index) => (
-       <AnimationBounce key={index}>
-        {word === " " ? "\u00A0" : word}
-       </AnimationBounce>
+       <BounceOnload>
+        <AnimationBounce key={index}>
+         {word === " " ? "\u00A0" : word}
+        </AnimationBounce>
+       </BounceOnload>
       ))}
      </div>
      <p className="text-md md:text-xl text-zinc-500 font-medium">
