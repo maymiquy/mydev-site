@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation, useAnimationControls } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { set } from "lodash";
 
 export const AnimationBounce = ({ children }) => {
  const controls = useAnimationControls();
  const [isPlaying, setIsPlaying] = useState(false);
+
  const setBounce = () => {
   controls.start({
    transform: [
@@ -40,6 +42,69 @@ export const AnimationBounce = ({ children }) => {
  );
 };
 
+export const BounceOnload = ({ children }) => {
+ const controls = useAnimation();
+
+ useEffect(() => {
+  const onload = setTimeout(() => {
+   controls.start({
+    transform: [
+     "scale3d(1, 1, 1)",
+     "scale3d(1.8, 0.7, 1)",
+     "scale3d(0.5, 1.5, 1)",
+     "scale3d(1.5, 0.9, 1)",
+     "scale3d(0.7, 2.1, 1)",
+     "scale3d(1, 1, 1)",
+    ],
+    transition: {
+     times: [0, 0.4, 0.6, 0.7, 0.8, 0.9],
+    },
+   });
+  }, 500);
+
+  return () => clearTimeout(onload);
+ }, []);
+
+ return (
+  <>
+   <motion.span className="w-fit inline-block" animate={controls}>
+    {children}
+   </motion.span>
+  </>
+ );
+};
+export const HeartBeat = ({ children }) => {
+ const controls = useAnimation();
+
+ useEffect(() => {
+  const onload = setInterval(() => {
+   controls.start({
+    transform: [
+     "scale3d(1, 1, 1)",
+     "scale3d(1.8, 0.7, 1)",
+     "scale3d(0.5, 1.5, 1)",
+     "scale3d(1.5, 0.9, 1)",
+     "scale3d(0.7, 2.1, 1)",
+     "scale3d(1, 1, 1)",
+    ],
+    transition: {
+     times: [0, 0.4, 0.6, 0.7, 0.8, 0.9],
+    },
+   });
+  }, 3000);
+
+  return () => clearInterval(onload);
+ }, []);
+
+ return (
+  <>
+   <motion.span className="w-fit" animate={controls}>
+    {children}
+   </motion.span>
+  </>
+ );
+};
+
 export const Typewriter = () => {
  return (
   <h1 className={`text-xl md:text-2xl lg:text-3xl text-zinc-100 font-bold`}>
@@ -60,24 +125,3 @@ export const Typewriter = () => {
   </h1>
  );
 };
-
-// export const TextGradient = ({ name }) => {
-//  const [index, setIndex] = useState(0);
-//  const colors = [
-//   "bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-purple-500",
-//   "bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-500",
-//   "bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-700",
-//  ];
-
-//  useEffect(() => {
-//   const interval = setInterval(() => {
-//    setIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
-//   }, 1000);
-
-//   return () => clearInterval(interval);
-//  }, []);
-
-//  return (
-//   <h1 className={`text-xl lg:text-3xl ${colors[index]} font-bold`}>{name}</h1>
-//  );
-// };
