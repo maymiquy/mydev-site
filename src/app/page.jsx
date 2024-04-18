@@ -3,7 +3,11 @@ import Image from "next/image";
 import React from "react";
 import data from "../utils/data.json";
 import { getUser } from "./api/data-services";
-import { AnimationBounce } from "../components/partials/animation";
+import {
+ AnimationBounce,
+ BounceOnload,
+ HeartBeat,
+} from "../components/partials/animation";
 
 const navigation = [
  { name: "Profile", href: "/profile" },
@@ -22,15 +26,20 @@ export default function Home({ searchParams: { customUsername } }) {
    <nav className="my-16 animate-fade-in">
     <ul className="flex items-center justify-center gap-4">
      {navigation.map((item) => (
-      <Link
-       key={item.href}
-       href={
-        item.href + (customUsername ? `?customUsername=${customUsername}` : "")
-       }
-       className="text-md sm:text-lg duration-500 text-zinc-500 hover:text-zinc-300 border-dashed hover:border-solid p-2 rounded border-2 border-zinc-500 hover:border-zinc-300"
-      >
-       {item.name}
-      </Link>
+      <HeartBeat>
+       <BounceOnload>
+        <Link
+         key={item.href}
+         href={
+          item.href +
+          (customUsername ? `?customUsername=${customUsername}` : "")
+         }
+         className="text-md sm:text-lg duration-500 text-zinc-500 hover:text-zinc-300 border-dashed hover:border-solid p-2 rounded border-2 border-zinc-500 hover:border-zinc-300"
+        >
+         {item.name}
+        </Link>
+       </BounceOnload>
+      </HeartBeat>
      ))}
     </ul>
    </nav>
@@ -40,7 +49,7 @@ export default function Home({ searchParams: { customUsername } }) {
     <h1 className="md:flex items-center hidden bg-gradient-to-r from-zinc-400 to-zinc-100 hover:from-zinc-600 hover:to-zinc-300 text-transparent bg-clip-text cursor-default text-edge-outline font-display text-7xl md:text-9xl whitespace-nowrap">
      {splitUsername.map((word, index) => (
       <AnimationBounce key={index}>
-       {word === " " ? "\u00A0" : word}
+       <BounceOnload>{word === " " ? "\u00A0" : word}</BounceOnload>
       </AnimationBounce>
      ))}
     </h1>
@@ -64,13 +73,15 @@ const UserIcon = async ({ promise }) => {
  const user = await promise;
 
  return (
-  <Image
-   alt="image"
-   width={150}
-   height={150}
-   src={user.avatar_url || data.avatarUrl}
-   className="rounded-full w-52 h-52 md:w-40 md:h-40 mb-4 md:mb-12"
-  />
+  <BounceOnload>
+   <Image
+    alt="image"
+    width={150}
+    height={150}
+    src={user.avatar_url || data.avatarUrl}
+    className="rounded-full w-52 h-52 md:w-40 md:h-40 mb-4 md:mb-12"
+   />
+  </BounceOnload>
  );
 };
 
@@ -84,7 +95,7 @@ const UserText = async ({ promise }) => {
    <p className="block md:hidden text-sm font-bold">Hello, I'm </p>
    <p className="hidden md:block text-md font-bold">A.K.A</p>
    <p className="font-bold text-xl sm:text-3xl">
-    {user.name || data.displayName}
+    <BounceOnload>{user.name || data.displayName}</BounceOnload>
    </p>
    <p className="text-sm hidden md:block text-zinc-500 font-sans mt-2">
     Passionate and driven software development with a strong foundation in web
