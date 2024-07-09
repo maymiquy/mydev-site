@@ -18,7 +18,7 @@ export default function ProfilePage({ searchParams: { customUsername } }) {
    </ContainerAnimation>
    <div className="flex justify-center items-center w-full h-px bg-zinc-800">
     <Link
-     href="/CV-MiqdamHambali(2).pdf"
+     href="/CV-Miqdam Hambali-V4.pdf"
      target="_blank"
      className="flex flex-row justify-center items-center w-fit h-fit rounded-lg duration-700 bg-zinc-700 hover:bg-zinc-800 p-3 space-x-2"
     >
