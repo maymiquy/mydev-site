@@ -19,6 +19,9 @@ export const metadata = {
  description:
   "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer.",
  keywords: [
+  "Maymiquy",
+  "maymiquy",
+  "maymiquy - portfolio",
   "Miqdam Hambali",
   "Miqdam",
   "portfolio",
@@ -30,12 +33,12 @@ export const metadata = {
   title: "Miqdam Hambali | Portfolio",
   description:
    "Welcome to my portfolio site, I'm Miqdam Hambali an full-stack developer",
-  url: "https://miqdam-hambali.vercel.app",
+  url: "https://www.maymiquy.cloud",
   siteName: "Miqdam Hambali: Portfolio",
   locale: "en-US",
   type: "website",
   images: {
-   url: "https://miqdamhambali-portfolio.vercel.app/og.png",
+   url: "https://www.maymiquy.cloud/og.png",
    width: 1920,
    height: 1080,
   },
