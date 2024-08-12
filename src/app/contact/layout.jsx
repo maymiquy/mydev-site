@@ -1,5 +1,5 @@
-import { Footer } from "../../components/partials/footer";
-import { Navigation } from "../../components/partials/nav";
+import { Footer } from "../../components/ui/footer";
+import { Navigation } from "../../components/ui/nav";
 
 export default function ContactLayout({ children }) {
  return (

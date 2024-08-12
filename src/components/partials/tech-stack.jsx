@@ -1,13 +1,13 @@
 "use client";
 
-import { Card } from "../partials/card";
+import { Card } from "../ui/card";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import React from "react";
 import { constantIcons } from "../../utils/constant-icons";
 
 export default function TechStack() {
  return (
-  <div className="mt-6 lg:mt-0 bg-zinc-900 bg-opacity-40 rounded-xl shadow-xl p-6 flex flex-col space-y-4 xl:col-span-1 xl:row-span-2 overflow-hidden">
+  <div className="mt-6 lg:mt-0 bg-zinc-900 bg-opacity-40 rounded-xl shadow-md p-6 flex flex-col space-y-4 xl:col-span-1 xl:row-span-2 overflow-hidden">
    <h3 className="text-md md:text-lg text-center font-bold text-zinc-100">
     Technology Use
    </h3>

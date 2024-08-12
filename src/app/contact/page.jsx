@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card } from "../../components/partials/card";
+import { Card } from "../../components/ui/card";
 import data from "../../utils/data.json";
 import { getUser, getSocialAccounts } from "../api/data-services";
 import {

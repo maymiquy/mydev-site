@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import data from "../utils/data.json";
 import NextUIProviders from "./providers";
 import React, { Suspense } from "react";
-import { Loading } from "../components/partials/loading";
+import { Loading } from "../components/ui/loading";
 import NextTopLoader from "nextjs-toploader";
 
 const username = process.env.GITHUB_USERNAME || data.githubUsername;

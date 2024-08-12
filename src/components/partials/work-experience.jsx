@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Card } from "../partials/card";
+import { Card } from "../ui/card";
 import { experience } from "../../utils/constant-experience";
 
 const WorkExperience = () => {
@@ -53,7 +53,7 @@ const WorkExperience = () => {
  const loopedExperiences = [...experience, ...experience, ...experience];
 
  return (
-  <div className="bg-zinc-900 space-y-4 bg-opacity-40 rounded-xl shadow-xl p-6 xl:col-span-2 xl:row-span-1">
+  <div className="bg-zinc-900 space-y-4 bg-opacity-40 rounded-xl shadow-md p-6 xl:col-span-2 xl:row-span-1">
    <h3 className="text-md md:text-lg font-bold text-zinc-100">Experience</h3>
    <div
     ref={containerRef}

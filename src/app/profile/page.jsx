@@ -1,9 +1,9 @@
 import { getUser } from "../api/data-services";
 import data from "../../utils/data.json";
-import TechStack from "../../components/ui/tech-stack";
-import GithubStats from "../../components/ui/github-stats";
-import WorkExperience from "../../components/ui/work-experience";
-import PersonalInfo from "../../components/ui/personal-info";
+import TechStack from "../../components/partials/tech-stack";
+import GithubStats from "../../components/partials/github-stats";
+import WorkExperience from "../../components/partials/work-experience";
+import PersonalInfo from "../../components/partials/personal-info";
 
 export default function ProfilePage({ searchParams: { customUsername } }) {
  const username =

@@ -4,7 +4,7 @@ import {
  getRepositoryPackageJson,
  checkAppJsxExistence,
 } from "../../app/api/data-services";
-import Popover from "../partials/popover";
+import Popover from "../ui/popover";
 
 export const VercelInfo = async ({ info }) => {
  const nextjsLatestRelease = await getNextjsLatestRelease();
