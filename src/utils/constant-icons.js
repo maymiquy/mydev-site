@@ -61,7 +61,7 @@ export const constantIcons = [
          { name: "Flutter", icon: <SiFlutter color="#02569B" /> },
          { name: "Redux", icon: <SiRedux color="#764ABC" /> },
          { name: "Framer", icon: <SiFramer color="#0055FF" /> },
-         { name: "Chakra UI", icon: <SiChakraui color="#319795" /> },
+         { name: "ChakraUI", icon: <SiChakraui color="#319795" /> },
          { name: "Tailwind", icon: <SiTailwindcss color="#06B6D4" /> },
          { name: "Bootstrap", icon: <SiBootstrap color="#7952B3" /> },
       ]

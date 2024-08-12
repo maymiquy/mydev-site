@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation, useAnimationControls } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { set } from "lodash";
 
 export const AnimationBounce = ({ children }) => {
  const controls = useAnimationControls();
@@ -107,7 +106,7 @@ export const HeartBeat = ({ children }) => {
 
 export const Typewriter = () => {
  return (
-  <h1 className={`text-xl md:text-2xl lg:text-3xl text-zinc-100 font-bold`}>
+  <h1 className={`text-md md:text-xl xl:text-3xl text-zinc-100 font-bold`}>
    <TypeAnimation
     sequence={[
      "I'm a Full-stack developer",

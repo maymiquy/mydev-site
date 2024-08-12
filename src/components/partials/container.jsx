@@ -1,7 +1,7 @@
 "use client";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
 
-export const ContainerAnimation = ({ children }) => {
+export const ContainerAnimation = ({ children, className }) => {
  const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
  const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -16,7 +16,7 @@ export const ContainerAnimation = ({ children }) => {
  return (
   <div
    onMouseMove={onMouseMove}
-   className="relative min-h-max lg:min-h-screen w-full duration-700"
+   className={`relative min-h-max w-full duration-700 ${className}`}
   >
    <div className="pointer-events-none">
     <div className="absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
